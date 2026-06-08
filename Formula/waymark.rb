@@ -28,6 +28,17 @@ class Waymark < Formula
     system "cargo", "install", *std_cargo_args(path: "crates/waymark-daemon")
   end
 
+  def post_install
+    label = "network.gyorffy.waymark.daemon"
+    target = "gui/#{Process.uid}/#{label}"
+    return unless quiet_system("launchctl", "print", target)
+
+    return if quiet_system("launchctl", "kickstart", "-k", target)
+
+    opoo "Waymark was upgraded, but the running daemon was not restarted."
+    opoo "Run `launchctl kickstart -k #{target}` to use the new version now."
+  end
+
   service do
     run [opt_bin/"waymarkd"]
     keep_alive true
