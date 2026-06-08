@@ -1,6 +1,6 @@
-# Homebrew tap for waymark
+# Homebrew tap for Waymark
 
-Public Homebrew tap publishing pre-built [waymark](https://gitea.gyorffy.network/attila/waymark) bottles for macOS.
+Public Homebrew tap publishing pre-built Waymark bottles for macOS.
 
 ## Install
 
@@ -17,10 +17,6 @@ brew install waymark
 ## Supported platforms
 
 macOS Big Sur (11) through Tahoe (26), both Apple Silicon and Intel.
-
-## Source
-
-The source for waymark itself is hosted privately on Gitea. Bottles published here are cross-compiled from each tagged release and uploaded as GitHub Release assets on this repo.
 
 ## License
 
